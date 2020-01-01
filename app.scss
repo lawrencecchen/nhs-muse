@@ -1,0 +1,195 @@
+@mixin letter-spacing($spacing) {
+  letter-spacing: ($spacing / 1000) * 1em;
+}
+
+@mixin line-spacing($spacing) {
+  line-height: $spacing * 1px;
+}
+
+html,
+body {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  background-color: #151515;
+  font-family: "Avenir Next";
+  text-rendering: optimizeLegibility;
+
+  nav {
+    padding: 0 !important;
+    font-family: "AvenirNext-DemiBoldItalic";
+    // font-family: "Avenir Next";
+
+    a {
+      font-size: 29px !important;
+      color: #f0f0f0;
+      transition: 0.3s ease-in-out;
+    }
+    a:hover {
+      color: #e2dbdb5d;
+      text-decoration: none;
+    }
+
+    .navbar-brand {
+      text-transform: uppercase;
+      margin-left: 4%;
+      padding: 0;
+      line-height: 130px;
+      // @include line-spacing(53);
+      font-size: 39px !important;
+
+      // font-size: 39 !important;
+      // font-style: italic;
+    }
+
+    ul {
+      position: absolute;
+      left: 60%;
+      li {
+        padding-right: 49px;
+        a {
+          display: block;
+          // font-style: italic;
+          // font-weight: 600;
+          line-height: 53px;
+        }
+      }
+    }
+  }
+
+  .main-heading {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+
+    #green-bar {
+      width: 448px;
+      height: 641px;
+      position: absolute;
+      top: 0px;
+      left: 214px;
+      background-color: #009b77;
+      z-index: -999;
+
+      #violin-svg-background {
+        position: absolute;
+        top: 334.6px;
+        left: -18.65px;
+        transform: rotate(53deg);
+        // fill: rgba(#000000, 0.18);
+        border: none;
+        filter: opacity(0.18);
+      }
+    }
+
+    #title {
+      position: relative;
+      bottom: 0px;
+      margin: 0;
+      margin-left: 4%;
+      color: #ffebeb;
+      height: 236px;
+      width: 460px;
+      font-size: 50px;
+      @include letter-spacing(40);
+      @include line-spacing(84);
+      font-family: "AvenirNext-Bold";
+    }
+
+    div {
+      position: absolute;
+      left: 60%;
+      font-family: "AvenirNext-Regular";
+      font-size: 20px;
+      @include line-spacing(46);
+      @include letter-spacing(40);
+      width: 505px;
+      height: min-content;
+    }
+  }
+
+  .call-to-action {
+    height: min-content;
+    min-height: 300px;
+    width: 35%;
+    position: absolute;
+    top: 497px;
+    left: 60%;
+    background-color: #cc0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    #trumpet-svg-background {
+      position: absolute;
+      bottom: 20px;
+      right: 30px;
+      // top: 334.6px;
+      // left: -18.65px;
+      // transform: rotate(53deg);
+      // fill: rgba(#000000, 0.18);
+      border: none;
+      filter: opacity(0.18);
+    }
+
+    h3 {
+      color: #f0f0f0;
+      font-size: 38px;
+      font-family: "AvenirNext-HeavyItalic";
+      @include letter-spacing(40);
+      @include line-spacing(68);
+      text-transform: lowercase;
+      width: 90%;
+    }
+
+    div {
+      font-size: 19px;
+      @include letter-spacing(40);
+      @include line-spacing(40);
+      width: 90%;
+    }
+  }
+}
+.custom-btn {
+  border: none;
+  border-radius: 0px !important;
+  color: #f0f0f0;
+  background-color: transparent;
+  text-transform: uppercase;
+  font-family: "AvenirNext-DemiBold";
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+  width: 250px;
+  height: 60px;
+  background-size: 200% 100%;
+  background-image: linear-gradient(to right, transparent 50%, #009b77 50%);
+  background-position: -5% 0%;
+  transition: 0.2s background-position ease-in-out;
+
+  &:hover {
+    background-position: -100% 0%;
+  }
+}
+
+.text-white {
+  color: #ffffff;
+}
+
+.watermark {
+  position: absolute;
+  top: 20%;
+  left: -12%;
+  // width: 1526px;
+  // height: 702px;
+  font-family: "AvenirNext-Bold";
+  font-size: 700px;
+  @include letter-spacing(40);
+  @include line-spacing(89);
+  color: rgba(#f0f0f0, 0.03);
+  z-index: -9999;
+}
